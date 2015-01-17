@@ -1,18 +1,18 @@
-# `matpowerCases.jl`: Bringing MATPOWER casefiles to Julia
+# `MatpowerCases.jl`: Bringing MATPOWER casefiles to Julia
 
-The [MATPOWER][1] software package provides several MATLAB power flow functions, but it also includes data for many electric power transmission networks. These networks are frequently used by power and energy researchers to validate new analysis methods. This package makes it easy to load 
+[MATPOWER][1] provides several MATLAB power flow functions, but it also includes data for many transmission networks. These networks are frequently used by power and energy researchers to validate new analysis methods. This Julia package makes it easy to load network data packaged with MATPOWER into your Julia environment.
 
 # Instructions for installation and use
 
-`matpowerCases` is currently an unregistered Julia package. To install it, use:
+`MatpowerCases` is currently an unregistered Julia package. To install it, use:
 
 ```julia
-Pkg.clone("https://github.com/kersulis/matpowerCases.jl.git")
+Pkg.clone("https://github.com/kersulis/MatpowerCases.jl.git")
 ```
-Now that you have `matpowerCases` installed, you may load data for a transmission network:
+Now that you have the package installed, you may load data for a transmission network:
 
 ```julia
-using matpowerCases
+using MatpowerCases
 networkData = loadcase("case118")
 ```
 Now `networkData` is a Dict containing IEEE 118-bus network data in the format described [here][2]. You may load data for any of the following networks:
