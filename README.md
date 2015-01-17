@@ -41,15 +41,15 @@ case9
 case9Q
 ```
 
-The popular [RTS-96 network][4] is not included in MATPOWER, but is available in MatpowerCases.jl thanks to [this freely available file][5]. Load it using:
+The popular [RTS-96 network][4] is not included in MATPOWER, but is available in MatpowerCases.jl thanks to [this freely available file][5] (which I found [here][6]. Load RTS-96 data using:
 
 ```julia
 networkData = loadcase("case96")
 ```
-
 
 [1]: http://www.pserc.cornell.edu//matpower/
 [2]: http://www.maths.ed.ac.uk/optenergy/LocalOpt/caseformat.txt
 [3]: http://julia.readthedocs.org/en/latest/manual/packages/#installing-unregistered-packages
 [4]: https://www.ee.washington.edu/research/pstca/rts/pg_tcarts.htm
 [5]: http://www.parallelcoding.com/wp-content/uploads/Research/MCSPruning/case96.m
+[6]: https://www.mail-archive.com/matpower-l@cornell.edu/msg01308.html
