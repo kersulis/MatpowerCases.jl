@@ -1,4 +1,4 @@
-# `MatpowerCases.jl`: Bringing MATPOWER casefiles to Julia
+# Bringing MATPOWER's transmission network data to Julia
 
 [MATPOWER][1] provides several MATLAB power flow functions, but it also includes data for many transmission networks. These networks are frequently used by power and energy researchers to validate new analysis methods. This Julia package makes it easy to load network data packaged with MATPOWER into your Julia environment.
 
