@@ -1,6 +1,6 @@
-The code in MatpowerCases.jl is distributed under the MIT license, a copy of which is produced below. The .mat files containing transmission network data were generated, via MATLAB, from .m files contained in MATPOWER (whose license is also included below). These files are not covered by the GNU General Public License, nor are they covered by the MIT license I have applied to this project. The original network data was included in MATPOWER by permission or derived from public sources. Its presence here is predicated on fair use. This package is for non-commercial, educational purposes. Also, it has no effect on the value of MATPOWER, which is itself an open-source, education-oriented software package.
+The Julia code in MatpowerCases.jl is distributed under the MIT license, a copy of which is produced below. The .mat files containing transmission network data were generated, via MATLAB, from .m files contained in MATPOWER (whose license is also included below). These files are not covered by the GNU General Public License, nor are they covered by the MIT license I have applied to this project. The original network data was included in MATPOWER by permission or derived from public sources. Its presence here is predicated on fair use -- this package is for non-commercial, educational purposes. Mirroring this data has no effect on the commercial value of MATPOWER, which is itself an open-source, education-oriented software package.
 
-One .mat file (the one pertaining to the RTS-96 system) was generated using a .m file 
+Two of the .mat files (case96 and case79) were generated using .m files from Zhu Wang and Robert Green (these files are not included in MATPOWER). The license for these files is reproduced below, as required. 
 
 ------------------------------
 The MIT License (MIT)
@@ -50,7 +50,7 @@ under other licensing terms, the licensors of MATPOWER grant
 you additional permission to convey the resulting work.
 
 ------------------------------
-RTS-96 .m File License
+License for case96 and case79 .m Files
 
 (c) 2009-2010 Zhu Wang, Robert Green
 ALL RIGHTS RESERVED WORLDWIDE
@@ -61,3 +61,13 @@ INFORMATION BELOW ARE INCLUDED WITHOUT MODIFICATION,
 AND AS LONG AS NO FEE OR COMPENSATION IS CHARGED,
 INCLUDING "TIE-IN" OR "BUNDLING" FEES CHARGED FOR
 OTHER PRODUCTS.
+
+------------------------------
+Data Sources
+
+MATPOWER transmission network data (all networks except case96 and case79)
+http://www.pserc.cornell.edu//matpower/
+
+case96 and case79 transmission network data
+http://www.parallelcoding.com/wp-content/uploads/Research/MCSPruning/
+
