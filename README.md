@@ -9,7 +9,7 @@ MatpowerCases is currently an [unregistered Julia package][3]. To install it, us
 ```julia
 Pkg.clone("https://github.com/kersulis/MatpowerCases.jl.git")
 ```
-Now that you have the package installed, you may load data for a transmission network:
+With the package installed, you may load data for a transmission network:
 
 ```julia
 using MatpowerCases
@@ -43,6 +43,8 @@ case79
 case96
 ```
 
+(More information about each network may be found in [MATPOWER's online reference][8].)
+
 The popular [RTS-79 and RTS-96 networks][4] are not included in MATPOWER, but are available in MatpowerCases thanks to Zhu Wang and Robert Green, who made their .m files [freely available][5]. You may load data for these networks using `loadcase("case96")` or `loadcase("case79")`.
 
 [1]: http://www.pserc.cornell.edu//matpower/
@@ -52,3 +54,4 @@ The popular [RTS-79 and RTS-96 networks][4] are not included in MATPOWER, but ar
 [5]: http://www.parallelcoding.com/wp-content/uploads/Research/MCSPruning
 [6]: https://www.mail-archive.com/matpower-l@cornell.edu/msg01308.html
 [7]: https://www.ee.washington.edu/research/pstca/pf118/pg_tca118bus.htm
+[8]: http://www.pserc.cornell.edu//matpower/docs/ref/
