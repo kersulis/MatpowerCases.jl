@@ -62,6 +62,12 @@ AND AS LONG AS NO FEE OR COMPENSATION IS CHARGED,
 INCLUDING "TIE-IN" OR "BUNDLING" FEES CHARGED FOR
 OTHER PRODUCTS.
 
+References concerning this code include:
+1 - R. Green, L. Wang, Z. Wang, M. Alam, and C. Singh, “Power System Reliability Assessment Using Intelligent State Space Pruning Techniques: A Comparative Study” Submitted to 2010 Conference on Power System Technology, Hangzou China, October 2010.
+2 - R. Green, L. Wang, M. Alam, and C. Singh, “State space pruning for Reliability Evaluation using Binary Particle Swarm Optimization,” Submitted to Hawaii International Conference on System Sciences,University of Hawaii at Manoa, January 2011.
+3 - R. Green, L. Wang, and C. Singh, “State space pruning for power system reliability evaluation using genetic algorithms,” IEEE Power & Energy Society General Meeting 2010, Minneapolis, MN, July 2010.
+4 - R. Green, Z. Wang, L. Wang, M. Alam, and C. Singh, “Evaluation of loss of load probability for power systems using intelligent search based state space pruning,” The 11th International Conference on Probabilistic Methods Applied to Power Systems, Singapore, June 2010
+
 ------------------------------
 Data Sources
 
