@@ -4,10 +4,10 @@
 
 # Instructions for installation and use
 
-MatpowerCases is currently an [unregistered Julia package][3]. To install it, use:
+To install MatpowerCases, use:
 
 ```julia
-Pkg.clone("https://github.com/kersulis/MatpowerCases.jl.git")
+Pkg.add("MatpowerCases")
 ```
 With the package installed, you may load data for a transmission network:
 
@@ -49,7 +49,6 @@ The popular [RTS-79 and RTS-96 networks][4] are not included in MATPOWER, but ar
 
 [1]: http://www.pserc.cornell.edu//matpower/
 [2]: http://www.maths.ed.ac.uk/optenergy/LocalOpt/caseformat.txt
-[3]: http://julia.readthedocs.org/en/latest/manual/packages/#installing-unregistered-packages
 [4]: https://www.ee.washington.edu/research/pstca/rts/pg_tcarts.htm
 [5]: http://www.parallelcoding.com/wp-content/uploads/Research/MCSPruning
 [6]: https://www.mail-archive.com/matpower-l@cornell.edu/msg01308.html
