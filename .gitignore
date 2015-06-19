@@ -3,3 +3,5 @@ mfiles
 src/Develop\ Julia\ module.ipynb
 testing.ipynb
 .ipynb_checkpoints
+*.sublime-project
+*.sublime-workspace
