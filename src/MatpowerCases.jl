@@ -1,7 +1,7 @@
 module MatpowerCases
 using MAT
 
-export loadcase
+export loadcase,casenames
 
 function loadcase(caseName::ASCIIString)
     """
