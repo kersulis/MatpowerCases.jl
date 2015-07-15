@@ -8,11 +8,17 @@ Return a Dict containing power system data
 in MATPOWER's format.
 Return this list of cases by running casenames().
 """
-function loadcase(caseName::ASCIIString)
+function loadcase(caseName::ASCIIString; describe=true)
     s = joinpath(Pkg.dir(),"MatpowerCases","data")
-    mpc = matread(joinpath(s,"$(caseName).mat"))["mpc"]
+    p = joinpath(s,"$(caseName).mat")
+    if !isfile(p)
+        error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
+    end
+    mpc = matread(p)["mpc"]
     ds = mpc["docstring"]
-    println(split(ds,"\n")[1])
+    if describe
+        println(split(ds,"\n")[1])
+    end
     return mpc
 end
 
