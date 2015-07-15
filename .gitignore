@@ -1,7 +1,3 @@
-Generating\ .mat\ files.ipynb
-mfiles
-src/Develop\ Julia\ module.ipynb
-testing.ipynb
-.ipynb_checkpoints
-*.sublime-project
-*.sublime-workspace
+nbs
+matfiles
+51casefiles
