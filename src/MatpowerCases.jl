@@ -3,8 +3,7 @@ using MAT
 
 export loadcase,casenames
 
-"""
-Return a Dict containing power system data
+""" Return a Dict containing power system data
 in MATPOWER's format.
 Return this list of cases by running casenames().
 """
@@ -22,10 +21,10 @@ function loadcase(caseName::ASCIIString; describe=true)
     return mpc
 end
 
+""" Return an array containing all valid
+MatpowerCases case names.
+"""
 function casenames()
-    """ Return an array containing all valid
-    MatpowerCases case names.
-    """
     s = joinpath(Pkg.dir(),"MatpowerCases","data")
     names = readdir(s)
     [splitext(name)[1] for name in names]
