@@ -4,8 +4,8 @@ using MatpowerCases
 println("Running tests...")
 
 # Test specific data for one network:
-println("- number check")
-mpc = loadcase("case9",describe=false)
+println("- number/case9 check")
+mpc = loadcase("case9",describe=true)
 gencost = [2.0  1500.0  0.0  3.0  0.11    5.0  150.0
 		 2.0  2000.0  0.0  3.0  0.085   1.2  600.0
 		 2.0  3000.0  0.0  3.0  0.1225  1.0  335.0]
@@ -24,5 +24,8 @@ for name in casenames()
     push!(key_test,key_list ⊆ [key for key in keys(mpc)])
 end
 @test all(key_test)
+
+println("- graceful failure test")
+@test_throws ErrorException loadcase("invalidcasename")
 
 println("done.")
