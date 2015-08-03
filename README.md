@@ -2,6 +2,8 @@
 
 [![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.3.svg)](http://pkg.julialang.org/?pkg=MatpowerCases&ver=release)
 [![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.4.svg)](http://pkg.julialang.org/?pkg=MatpowerCases&ver=nightly)
+[![Build Status](https://travis-ci.org/kersulis/MatpowerCases.jl.svg?branch=pull-request%2F9a90ba62)](https://travis-ci.org/kersulis/MatpowerCases.jl)
+[![Coverage Status](https://coveralls.io/repos/kersulis/MatpowerCases.jl/badge.svg?branch=pull-request%2F67b49adc&service=github)](https://coveralls.io/github/kersulis/MatpowerCases.jl?branch=pull-request%2F67b49adc)
 
 My favorite [MATPOWER][1] function is `loadcase(caseName)`, so I made it work in Julia.
 
