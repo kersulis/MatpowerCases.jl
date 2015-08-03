@@ -1,3 +1,4 @@
 nbs
 matfiles
 51casefiles
+*.cov
