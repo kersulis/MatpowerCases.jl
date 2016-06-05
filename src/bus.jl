@@ -47,3 +47,8 @@ function extract_bus(mpc)
         return NaN
     end
 end
+
+function extract_bus(cname::AbstractString)
+    mpc = loadcase(cname; describe=false)
+    extract_bus(mpc)
+end

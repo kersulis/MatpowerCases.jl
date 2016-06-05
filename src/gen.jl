@@ -58,11 +58,16 @@ function extract_gen(mpc)
         return Gen([gen[:, i] for i in 1:size(gen, 2)]..., blanks...)
     elseif size(gen, 2) == 25
         return Gen([gen[:, i] for i in 1:size(gen, 2)]...)
-    else # version 1 data
+    elseif size(gen, 2) == 10 # version 1 data
         blanks = ([NaN], [NaN], [NaN], [NaN],
                     [NaN], [NaN], [NaN], [NaN],
                     [NaN], [NaN], [NaN], [NaN],
                     [NaN], [NaN], [NaN])
         return Gen([gen[:, i] for i in 1:size(gen, 2)]..., blanks...)
     end
+end
+
+function extract_gen(cname::AbstractString)
+    mpc = loadcase(cname; describe=false)
+    extract_gen(mpc)
 end
