@@ -5,9 +5,9 @@
 [![Build Status](https://travis-ci.org/kersulis/MatpowerCases.jl.svg)](https://travis-ci.org/kersulis/MatpowerCases.jl)
 [![Coverage Status](https://coveralls.io/repos/kersulis/MatpowerCases.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/kersulis/MatpowerCases.jl?branch=master)
 
-My favorite [MATPOWER][1] function is `loadcase(caseName)`, so I made it work in Julia.
+My favorite [MATPOWER][1] function is `loadcase(name)` (where `name` is a string), so I made it work in Julia.
 
-This package contains all transmission network data included in MATPOWER 5.1, plus data for the [RTS-96 and RTS-79 networks][4]. You can return a `Dict` containing network data using `loadcase(caseName)`, just as you would with MATPOWER. No MATLAB kernel or MATPOWER installation is required.
+This package contains all transmission network data included in MATPOWER 5.1, plus data for the [RTS-96 and RTS-79 networks][4]. You can return a `Dict` containing network data using `loadcase(name)`, just as you would with MATPOWER. No MATLAB kernel or MATPOWER installation is required.
 
 ## Installation and use
 
@@ -50,6 +50,17 @@ print(mpc["docstring"])
 
 This is the same docstring you would see if you ran `help(caseName)` in a MATLAB environment with MATPOWER installed.
 
+## Conversion to `Case` type
+
+This package will also convert an mpc `Dict` to an instance of a type called `Case`. `Case` contains all mpc data, but is easier to navigate. Rather than referring to the [caseformat documentation][2] to figure out where, say, active power injection data might be, you can type:
+
+```julia
+c = extract_case("case9")
+```
+
+Then type `c.<TAB>` to see a list of fields. Active power injections would logically be under `bus`, so type `c.bus.<TAB>`. `PD` is one of the fields that appears. Typing `c.bus.PD` returns the vector of active power injections for all buses.
+
+
 ## Who to credit when publishing
 
 MATPOWER is an awesome tool for power and energy researchers. It is actively developed by Ray Zimmerman, Carlos Murillo-Sánchez and others. If you use this package in your research, please cite them:
@@ -65,7 +76,7 @@ doi: 10.1109/TPWRS.2013.2251015*
 
 
 [1]: http://www.pserc.cornell.edu//matpower/
-[2]: http://www.maths.ed.ac.uk/optenergy/LocalOpt/caseformat.txt
+[2]: http://www.pserc.cornell.edu/matpower/docs/ref/matpower5.0/caseformat.html
 [4]: https://www.ee.washington.edu/research/pstca/rts/pg_tcarts.htm
 [5]: http://www.parallelcoding.com/wp-content/uploads/Research/MCSPruning
 [6]: https://www.mail-archive.com/matpower-l@cornell.edu/msg01308.html
