@@ -35,6 +35,17 @@ type Bus
     MU_VMIN::Vector{Float64}
 end
 
+"""
+Extract bus information from mpc Dict. Return instance of Bus.
+
+IN:
+
+* mpc. Instance of MPC dict (loaded, for instance, by loadcase())
+
+OUT:
+
+* Instance of Bus containing all bus data.
+"""
 function extract_bus(mpc)
     bus = mpc["bus"]
     if size(bus, 2) == 13
@@ -48,6 +59,10 @@ function extract_bus(mpc)
     end
 end
 
+"""
+Shortcut for returning bus info for one of the cases listed by
+`casenames()`.
+"""
 function extract_bus(cname::AbstractString)
     mpc = loadcase(cname; describe=false)
     extract_bus(mpc)

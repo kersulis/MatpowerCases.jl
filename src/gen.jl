@@ -51,6 +51,17 @@ type Gen
     MU_QMIN::Vector{Float64}
 end
 
+"""
+Extract gen information from mpc Dict. Return instance of Gen.
+
+IN:
+
+* mpc. Instance of MPC dict (loaded, for instance, by loadcase())
+
+OUT:
+
+* Instance of Gen containing all gen data.
+"""
 function extract_gen(mpc)
     gen = mpc["gen"]
     if size(gen, 2) == 21
@@ -67,6 +78,10 @@ function extract_gen(mpc)
     end
 end
 
+"""
+Shortcut for returning gen info for one of the cases listed by
+`casenames()`.
+"""
 function extract_gen(cname::AbstractString)
     mpc = loadcase(cname; describe=false)
     extract_gen(mpc)

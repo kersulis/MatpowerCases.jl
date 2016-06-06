@@ -43,6 +43,17 @@ type Branch
     MU_ANGMAX::Vector{Float64}
 end
 
+"""
+Extract branch information from mpc Dict. Return instance of Branch.
+
+IN:
+
+* mpc. Instance of MPC dict (loaded, for instance, by loadcase())
+
+OUT:
+
+* Instance of Branch containing all branch data.
+"""
 function extract_branch(mpc)
     branch = mpc["branch"]
     if size(branch, 2) == 13
@@ -59,6 +70,10 @@ function extract_branch(mpc)
     end
 end
 
+"""
+Shortcut for returning branch info for one of the cases listed by
+`casenames()`.
+"""
 function extract_branch(cname::AbstractString)
     mpc = loadcase(cname; describe=false)
     extract_branch(mpc)
