@@ -51,11 +51,8 @@ function extract_bus(mpc)
     if size(bus, 2) == 13
         blanks = ([NaN], [NaN], [NaN], [NaN])
         return Bus([bus[:, i] for i in 1:size(bus, 2)]..., blanks...)
-    elseif size(bus, 2) == 17
-        return Bus([bus[:, i] for i in 1:size(bus, 2)]...)
     else
-        warn("bus matrix has improper number of columns")
-        return NaN
+        return Bus([bus[:, i] for i in 1:size(bus, 2)]...)
     end
 end
 
