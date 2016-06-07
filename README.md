@@ -3,7 +3,7 @@
 [![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.3.svg)](http://pkg.julialang.org/?pkg=MatpowerCases&ver=release)
 [![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.4.svg)](http://pkg.julialang.org/?pkg=MatpowerCases&ver=nightly)
 [![Build Status](https://travis-ci.org/kersulis/MatpowerCases.jl.svg)](https://travis-ci.org/kersulis/MatpowerCases.jl)
-[![Coverage Status](https://coveralls.io/repos/kersulis/MatpowerCases.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/kersulis/MatpowerCases.jl?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kersulis/MatpowerCases.jl/badge.svg?branch=master)](https://coveralls.io/github/kersulis/MatpowerCases.jl?branch=master)
 
 My favorite [MATPOWER][1] function is `loadcase(name)` (where `name` is a string), so I made it work in Julia.
 
