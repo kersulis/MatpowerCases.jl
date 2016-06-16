@@ -8,5 +8,3 @@ include("bus.jl")
 include("gen.jl")
 include("gencost.jl")
 include("case.jl")
-
-println("done.")
