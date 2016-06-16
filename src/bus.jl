@@ -48,12 +48,10 @@ OUT:
 """
 function extract_bus(mpc)
     bus = mpc["bus"]
-    if size(bus, 2) == 13
-        blanks = ([NaN], [NaN], [NaN], [NaN])
-        return Bus([bus[:, i] for i in 1:size(bus, 2)]..., blanks...)
-    else
-        return Bus([bus[:, i] for i in 1:size(bus, 2)]...)
-    end
+    nc = size(bus, 2)
+    nf = length(fieldnames(Bus))
+    blanks = fill([NaN], nf - nc)
+    return Bus([bus[:, i] for i in 1:size(bus, 2)]..., blanks...)
 end
 
 """

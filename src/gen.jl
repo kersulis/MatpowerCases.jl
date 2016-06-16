@@ -64,18 +64,10 @@ OUT:
 """
 function extract_gen(mpc)
     gen = mpc["gen"]
-    if size(gen, 2) == 21
-        blanks = ([NaN], [NaN], [NaN], [NaN])
-        return Gen([gen[:, i] for i in 1:size(gen, 2)]..., blanks...)
-    elseif size(gen, 2) == 25
-        return Gen([gen[:, i] for i in 1:size(gen, 2)]...)
-    elseif size(gen, 2) == 10 # version 1 data
-        blanks = ([NaN], [NaN], [NaN], [NaN],
-                    [NaN], [NaN], [NaN], [NaN],
-                    [NaN], [NaN], [NaN], [NaN],
-                    [NaN], [NaN], [NaN])
-        return Gen([gen[:, i] for i in 1:size(gen, 2)]..., blanks...)
-    end
+    nc = size(gen, 2)
+    nf = length(fieldnames(Gen))
+    blanks = fill([NaN], nf - nc)
+    return Gen([gen[:, i] for i in 1:nc]..., blanks...)
 end
 
 """

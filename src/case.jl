@@ -22,7 +22,8 @@ OUT:
 * Instance of Case containing all case data.
 """
 function extract_case(mpc)
-    if in("baseMVA", keys(mpc))
+    k = keys(mpc)
+    if in("baseMVA", k)
         baseMVA = mpc["baseMVA"]
     else
         info("No base MVA found. Guessing 100.0.")
@@ -30,12 +31,12 @@ function extract_case(mpc)
     end
     gen = extract_gen(mpc)
     branch = extract_branch(mpc)
-    docstring = mpc["docstring"]
+    docstring = in("docstring", k) ? mpc["docstring"] : ""
     bus = extract_bus(mpc)
-    version = in("version", keys(mpc)) ? parse(mpc["version"]) : 1
-    gencost = in("gencost", keys(mpc)) ? extract_gencost(mpc) : nothing
-    areas = in("areas", keys(mpc)) ? mpc["areas"] : nothing
-    bus_name = in("bus_name", keys(mpc)) ? mpc["bus_name"][:] : AbstractString[]
+    version = in("version", k) ? parse(mpc["version"]) : 1
+    gencost = in("gencost", k) ? extract_gencost(mpc) : nothing
+    areas = in("areas", k) ? mpc["areas"] : nothing
+    bus_name = in("bus_name", k) ? mpc["bus_name"][:] : AbstractString[]
 
     Case(baseMVA, gen, branch, docstring, bus, version, gencost, areas, bus_name)
 end

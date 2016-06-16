@@ -56,18 +56,10 @@ OUT:
 """
 function extract_branch(mpc)
     branch = mpc["branch"]
-    if size(branch, 2) == 13
-        blanks = ([NaN], [NaN], [NaN], [NaN],
-                    [NaN], [NaN], [NaN], [NaN])
-        return Branch([branch[:, i] for i in 1:size(branch, 2)]..., blanks...)
-    elseif size(branch, 2) == 11 # version 1 data
-        blanks = ([NaN], [NaN], [NaN], [NaN],
-                    [NaN], [NaN], [NaN], [NaN],
-                    [NaN], [NaN])
-        return Branch([branch[:, i] for i in 1:size(branch, 2)]..., blanks...)
-    else
-        return Branch([branch[:, i] for i in 1:size(branch, 2)]...)
-    end
+    nc = size(branch, 2)
+    nf = length(fieldnames(Branch))
+    blanks = fill([NaN], nf - nc)
+    return Branch([branch[:, i] for i in 1:nc]..., blanks...)
 end
 
 """
