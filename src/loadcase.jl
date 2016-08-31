@@ -1,17 +1,25 @@
 using MAT
 
-""" Return a Dict containing power system data
-in MATPOWER's format.
-Return the list of valid case names with casenames().
-
-Set keyword argument `describe` to `false` for silent operation.
 """
-function loadcase(caseName::ASCIIString; describe=true)
-    s = joinpath(Pkg.dir(),"MatpowerCases","data")
-    p = joinpath(s,"$(caseName).mat")
-    if !isfile(p)
-        error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
+    mpc = loadcase(caseName)
+    mpc = loadcase(fpath)
+
+Return a Dict containing power system data in MATPOWER's format.
+Argument may be any of the names returned by casenames(), or a
+path to a .mat file containing MATPOWER-format data.
+
+Set `describe` to `false` for silent operation.
+"""
+function loadcase(caseName::AbstractString; describe=true)
+    if caseName[end-3:end] == ".mat"
+        p = caseName
+        !isfile(p) && error("File not found.")
+    else
+        s = joinpath(Pkg.dir(),"MatpowerCases","data")
+        p = joinpath(s,"$(caseName).mat")
+        !isfile(p) && error("No data for network \"$(caseName)\".\nUse casenames() to list all valid names.")
     end
+
     mpc = matread(p)["mpc"]
     ds = mpc["docstring"]
     if describe
@@ -20,7 +28,10 @@ function loadcase(caseName::ASCIIString; describe=true)
     return mpc
 end
 
-""" Return an array containing all valid
+"""
+    casenames()
+
+Return an array containing all valid
 MatpowerCases case names.
 """
 function casenames()

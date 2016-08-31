@@ -38,7 +38,7 @@ Dict{ASCIIString,Any} with 8 entries:
   "gencost"   => [2.0 0.0 0.0 3.0 0.01 40.0 0.0…
 ```
 
- You may load data for any network MATPOWER 5.1 supports, plus the RTS-96 (`case96`) and RTS-79 (`case79`) networks.
+You may load data for any network MATPOWER 5.1 supports, plus the RTS-96 (`case96`) and RTS-79 (`case79`) networks. You may also provide a path to any `.mat` file containing MATPOWER-format data to `loadcase()`.
 
 ## Detailed network information
 

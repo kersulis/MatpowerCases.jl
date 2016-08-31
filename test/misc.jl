@@ -24,4 +24,4 @@ end
 
 println("- graceful failure test")
 @test_throws ErrorException loadcase("invalidcasename")
-
+@test_throws ErrorException loadcase("doesnotexist.mat")
