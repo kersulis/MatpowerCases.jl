@@ -1,4 +1,4 @@
-using MatpowerCases, PowerModels, Base.Test
+using MatpowerCases, PowerModels, Logging, Base.Test
 
 println("- extract_case check")
 for c in casenames()
@@ -12,6 +12,7 @@ loadcase(c; describe=false)
 @assert isa(extract_case(c), MatpowerCases.Case)
 
 # test against PowerModels .m file parser
+Logging.configure(level=ERROR) # suppress wall of warnings
 c = joinpath(Pkg.dir(), "PowerModels", "test", "data", "case14.m")
 pm_gen = PowerModels.parse_matpower(c)["gen"]
 
