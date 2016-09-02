@@ -1,7 +1,11 @@
 # MATPOWER transmission network data
 
-[![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.3.svg)](http://pkg.julialang.org/?pkg=MatpowerCases&ver=release)
-[![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.4.svg)](http://pkg.julialang.org/?pkg=MatpowerCases&ver=nightly)
+##### Release status
+[![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.3.svg)](http://pkg.julialang.org/?pkg=MatpowerCases)
+[![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.4.svg)](http://pkg.julialang.org/?pkg=MatpowerCases)
+[![MatpowerCases](http://pkg.julialang.org/badges/MatpowerCases_0.5.svg)](http://pkg.julialang.org/?pkg=MatpowerCases)
+
+##### Dev status
 [![Build Status](https://travis-ci.org/kersulis/MatpowerCases.jl.svg)](https://travis-ci.org/kersulis/MatpowerCases.jl)
 [![Coverage Status](https://coveralls.io/repos/github/kersulis/MatpowerCases.jl/badge.svg?branch=master)](https://coveralls.io/github/kersulis/MatpowerCases.jl?branch=master)
 
